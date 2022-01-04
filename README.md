@@ -6,6 +6,7 @@ The review form will have the below fields
   1. Rating (1 to 10 stars, you can use radio buttons to take this input)
   2. Rating provided by
   3. Reason for the rating
+
 Once the user provides the review, the user should be redirected to the main page and the rating should be displayed along with the image.
 
 # FlickrImages
