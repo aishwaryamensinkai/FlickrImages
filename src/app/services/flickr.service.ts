@@ -14,7 +14,7 @@ export class FlickrService {
   constructor(private http: HttpClient) {}
   getPhotos(keyword: string) {
     const url = environment.url;
-    const params = `api_key=${environment.api_key}&text=${keyword}&tag=${keyword}&extras=${this.extras}&format=json&nojsoncallback=1`;
+    const params = `api_key=${environment.api_key}&text=${keyword}&tag=${keyword}&extras=${this.extras}&format=json&nojsoncallback=1&per_page=30`;
     return this.http.get<FlickrOutput>(url + params).pipe(
       map((res: FlickrOutput) => {
         const urlArr: any[] = [];
