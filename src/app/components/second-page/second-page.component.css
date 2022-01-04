@@ -1,0 +1,30 @@
+.cardBox {
+  height: auto;
+  text-align: center;
+  align-items: center;
+  /* width: 700px; */
+}
+.imagesCss {
+  text-align: center;
+}
+.imageCss {
+  height: 250px;
+  width: 250px;
+}
+.formRound form input {
+  background: #f6f8f9;
+  border-radius: 25px;
+  color: #010c27;
+  padding: 11px 26px;
+  height: auto;
+  border: 1px solid #f6f8f9;
+  font-size: 14px;
+}
+.has-error {
+  color: red;
+  border: 1px solid red;
+}
+.has-success {
+  color: black;
+  border: 1px solid green;
+}

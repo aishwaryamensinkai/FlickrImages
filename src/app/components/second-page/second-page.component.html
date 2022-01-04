@@ -1,0 +1,82 @@
+<div class="container">
+  <div style="text-align: center; align-items: center">
+    <div class="shadow bg-white rounded cardBox">
+      <br /><br />
+      <div>
+        <img
+          class="imageCss"
+          src="{{ foodObj?.url }}_m.jpg"
+          title="{{ foodObj?.title }}"
+        />
+      </div>
+      <br />
+      <div style="font-size: large">
+        <p><b>Title :</b> {{ foodObj?.title }}</p>
+        <p>
+          <b>Description :</b
+          ><a *ngIf="foodObj?.description?._content === ''; else elseBlock">
+            No Available</a
+          >
+        </p>
+        <ng-template #elseBlock>
+          {{ foodObj?.description?._content }}
+        </ng-template>
+      </div>
+      <br /><br />
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h2>Review the Image</h2>
+          <br /><br />
+          <div class="formRound">
+            <form [formGroup]="ratingForm">
+              <div class="row">
+                <div class="col-md-4"><b>Rating :</b></div>
+                <div class="col-md-8">
+                  <div *ngFor="let rate of ratings">
+                    <input
+                      formControlName="rating"
+                      name="rating"
+                      type="radio"
+                      value="{{ rate }}"
+                    />
+                    {{ rate }}
+                  </div>
+                </div>
+                <br /><br /><br />
+                <div class="col-md-4"><b>Name</b> :</div>
+                <div class="col-md-8">
+                  <input
+                    type="text"
+                    class="col-lg-12"
+                    formControlName="name"
+                    [ngClass]="{
+                      'has-error': !ratingForm.controls['name'].valid,
+                      'has-success': ratingForm.controls['name'].valid
+                    }"
+                  />
+                </div>
+                <br /><br /><br />
+                <div class="col-md-4"><b>Reason</b> :</div>
+                <div class="col-md-8">
+                  <textarea
+                    formControlName="reason"
+                    placeholder="Your review *"
+                    cols="50"
+                  ></textarea>
+                </div>
+              </div>
+              <br /><br /><br />
+              <div class="text-center submitBtn">
+                <button class="btn btn-primary" (click)="onSubmit()">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+</div>

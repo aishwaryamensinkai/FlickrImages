@@ -1,0 +1,11 @@
+.cardBox {
+  height: 285px;
+  cursor: pointer;
+}
+.imagesCss {
+  text-align: center;
+}
+.imageCss {
+  height: 250px;
+  width: 250px;
+}
