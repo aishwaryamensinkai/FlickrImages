@@ -1,3 +1,13 @@
+## Problem Statement
+Tech Stack to be used - Angular 10+. Create a responsive web app for reviewing Flickr images. The application would consist of two pages.
+In the first page, pull the latest 30 food images from Flickr using Flickr API and display in a grid format. By clicking on any of the images, the user should be redirected to a new page. 
+In the new page, display the information of clicked image (like image, name, description) and provide a form to add a review. 
+The review form will have the below fields
+  1. Rating (1 to 10 stars, you can use radio buttons to take this input)
+  2. Rating provided by
+  3. Reason for the rating
+Once the user provides the review, the user should be redirected to the main page and the rating should be displayed along with the image.
+
 # FlickrImages
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
