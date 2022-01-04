@@ -11,7 +11,7 @@ import { SharedService } from 'src/app/services/shared.service';
 export class FirstPageComponent implements OnInit {
   images: any[] = [];
   keyword!: string;
-  ratingObj: any;
+  ratingObj: any = null;
 
   constructor(
     private flickrService: FlickrService,

@@ -14,6 +14,11 @@
           src="{{ image.url }}_m.jpg"
           title="{{ image.title }}"
         />
+        <br />
+        <div *ngIf="ratingObj?.url == image.url" style="font-size: larger">
+          <b> Rating :</b>
+          {{ ratingObj?.rating }}
+        </div>
       </div>
     </div>
   </div>
