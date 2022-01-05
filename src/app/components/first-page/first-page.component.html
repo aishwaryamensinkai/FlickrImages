@@ -16,10 +16,25 @@
         />
         <br />
         <div *ngIf="ratingObj?.url == image.url" style="font-size: larger">
-          <b> Rating :</b>
-          {{ ratingObj?.rating }}
+          <p *ngIf="ratingObj.rating != null">
+            <b> Rating :</b> {{ ratingObj?.rating }}
+          </p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div
+  *ngIf="isLoading && !value"
+  class="d-flex justify-content-center loadingSpinner"
+>
+  <div class="spinner-border" style="width: 2rem; height: 2rem" role="status">
+    <span class="sr-only"></span>
+  </div>
+  <h3 class="loadingText">&nbsp; Loading...</h3>
+</div>
+<!-- <div class="text-center" *ngIf="!isLoading">
+  <a *ngIf="showNext" (click)="nextPage()" class="btn btn-secondary">
+    Load More Photos
+  </a>
+</div> -->

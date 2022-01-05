@@ -9,3 +9,20 @@
   height: 250px;
   width: 250px;
 }
+.loadingSpinner {
+  margin-top: 5vh;
+}
+.spinner-border {
+  color: #e6732a;
+}
+.loadingText {
+  font-size: 20px;
+  color: rgba(90, 88, 88, 0.65);
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.loadMoreText {
+  color: #07006e;
+  cursor: pointer;
+  text-decoration: underline;
+}

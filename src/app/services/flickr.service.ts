@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { FlickrOutput } from '../models/flickr-output.model';
 import { FlickrPhoto } from '../models/flickr-photo.model';
@@ -12,9 +12,11 @@ export class FlickrService {
   currPage = 1;
   extras = 'description';
   constructor(private http: HttpClient) {}
-  getPhotos(keyword: string) {
+  getPhotos(keyword: string): Observable<any> {
     const url = environment.url;
-    const params = `api_key=${environment.api_key}&text=${keyword}&tag=${keyword}&extras=${this.extras}&format=json&nojsoncallback=1&per_page=30`;
+    // with per pages
+    // const params = `api_key=${environment.api_key}&text=${keyword}&tag=${keyword}&extras=${this.extras}&format=json&nojsoncallback=1&per_page=${limit}`;
+    const params = `api_key=${environment.api_key}&text=${keyword}&tag=${keyword}&extras=${this.extras}&format=json&nojsoncallback=1`;
     return this.http.get<FlickrOutput>(url + params).pipe(
       map((res: FlickrOutput) => {
         const urlArr: any[] = [];

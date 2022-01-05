@@ -12,6 +12,9 @@ export class FirstPageComponent implements OnInit {
   images: any[] = [];
   keyword!: string;
   ratingObj: any = null;
+  isLoading = true;
+  value = false;
+  totalCount: any;
 
   constructor(
     private flickrService: FlickrService,
@@ -20,12 +23,24 @@ export class FirstPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.keyword = 'noodles food';
-    this.flickrService.getPhotos(this.keyword).subscribe((data) => {
-      this.images = data;
-    });
+    this.getFoodPhotos();
     this.ratingObj = this.sharedService.getObject();
     console.log(this.ratingObj);
+    if (this.ratingObj?.rating) {
+      this.ratingObj = this.ratingObj;
+    } else {
+      this.ratingObj = { ...this.ratingObj, rating: null };
+    }
+  }
+
+  getFoodPhotos() {
+    this.keyword = 'noodles food';
+    this.flickrService.getPhotos(this.keyword).subscribe((data) => {
+      this.images = this.images.concat(data);
+      this.totalCount = data.length;
+      console.log(this.totalCount);
+      this.value = true;
+    });
   }
 
   routing(image: any) {
