@@ -40,7 +40,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Deployment Steps
 1. Install : using npm i angular-cli-ghpages --save-dev
-2. Run Build : ng build --prod --base-href "https://GithubUserName.github.io/GithubRepoName/"
+2. Run Build : ng build --prod --base-href "https://GithubUserName.github.io/GithubRepoName/"  (ng build --prod --base-href "https://aishwaryamensinkai.github.io/FlickrImages/")
 3. Deploy to gh-pages: npx angular-cli-ghpages --dir=dist/flickr-images
 
 ## Deployed Link
